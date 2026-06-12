@@ -2,7 +2,15 @@ import OpenAI from "openai";
 import { GA4ReportResult } from "@/lib/ga4";
 import { KpiPreset } from "@/lib/kpiPresets";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// Lazy-init so the client is only created at request time, not during build
+let _openai: OpenAI | null = null;
+function getOpenAI(): OpenAI {
+  if (!_openai) {
+    if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is not set");
+    _openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  }
+  return _openai;
+}
 
 export interface InsightResult {
   summary: string;          // 1-sentence headline
@@ -94,7 +102,7 @@ Rules:
 - If data is sparse or empty, note that and recommend data collection improvements
 - sentiment: positive = good metrics, warning = mixed or concerning, critical = significant drops`;
 
-  const response = await openai.chat.completions.create({
+  const response = await getOpenAI().chat.completions.create({
     model: "gpt-4o",
     messages: [
       { role: "system", content: systemPrompt },
