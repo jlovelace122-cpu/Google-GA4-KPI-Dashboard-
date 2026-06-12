@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="92" stroke="url(#ringGrad)" stroke-width="6"/>
+  <!-- Globe meridians -->
+  <ellipse cx="100" cy="100" rx="92" ry="46" stroke="url(#ringGrad)" stroke-width="3" opacity="0.4"/>
+  <line x1="100" y1="8" x2="100" y2="192" stroke="url(#ringGrad)" stroke-width="3" opacity="0.4"/>
+  <!-- AI signal arcs -->
+  <path d="M58 68 Q100 30 142 68" stroke="url(#arcGrad)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M42 84 Q100 12 158 84" stroke="url(#arcGrad)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <!-- Eye / sentinel center -->
+  <ellipse cx="100" cy="112" rx="34" ry="22" fill="url(#eyeBg)" stroke="url(#arcGrad)" stroke-width="3"/>
+  <circle cx="100" cy="112" r="11" fill="url(#pupilGrad)"/>
+  <circle cx="104" cy="108" r="3.5" fill="white" opacity="0.7"/>
+  <!-- Data bars below -->
+  <rect x="60" y="148" width="10" height="20" rx="3" fill="url(#barGrad)" opacity="0.9"/>
+  <rect x="76" y="140" width="10" height="28" rx="3" fill="url(#barGrad)"/>
+  <rect x="92" y="133" width="10" height="35" rx="3" fill="url(#barGrad)"/>
+  <rect x="108" y="138" width="10" height="30" rx="3" fill="url(#barGrad)"/>
+  <rect x="124" y="144" width="10" height="24" rx="3" fill="url(#barGrad)" opacity="0.9"/>
+  <defs>
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="arcGrad" x1="0" y1="0" x2="200" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="eyeBg" x1="66" y1="90" x2="134" y2="134" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <radialGradient id="pupilGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </radialGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+</svg>
